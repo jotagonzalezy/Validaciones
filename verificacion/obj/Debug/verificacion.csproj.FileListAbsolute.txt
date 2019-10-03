@@ -1,0 +1,10 @@
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\bin\Debug\verificacion.exe.config
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.Form1.resources
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.Properties.Resources.resources
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.csproj.GenerateResource.Cache
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\bin\Debug\verificacion.exe
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\bin\Debug\verificacion.pdb
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.exe
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.pdb
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.csprojAssemblyReference.cache
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.csproj.CoreCompileInputs.cache

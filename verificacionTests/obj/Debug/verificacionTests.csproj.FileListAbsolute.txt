@@ -1,0 +1,12 @@
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\verificacionTests.dll
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\verificacionTests.pdb
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\verificacion.exe
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\verificacion.pdb
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\bin\Debug\es\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\obj\Debug\verificacionTests.dll
+c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacionTests\obj\Debug\verificacionTests.pdb
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacionTests\obj\Debug\verificacionTests.csprojAssemblyReference.cache
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacionTests\obj\Debug\verificacionTests.csproj.CoreCompileInputs.cache
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacionTests\bin\Debug\verificacion.exe.config
+C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacionTests\obj\Debug\verificacionTests.csproj.CopyComplete
