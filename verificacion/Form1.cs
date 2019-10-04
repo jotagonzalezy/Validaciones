@@ -96,5 +96,30 @@ namespace verificacion
             else
                 MessageBox.Show(@"Incorrecto", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var clase = new ValidacionClass();
+            var resp = clase.ValidaGtin14(txtGtin14.Text);
+            if (resp)
+                MessageBox.Show(@"Correcto", @"Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                MessageBox.Show(@"Incorrecto", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txtGtin14_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var clase = new ValidacionClass();
+            var resp = clase.ValidaContenedor(txtContenedor.Text);
+            if (resp)
+                MessageBox.Show(@"Correcto", @"Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            else
+                MessageBox.Show(@"Incorrecto", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

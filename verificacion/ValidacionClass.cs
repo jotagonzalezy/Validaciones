@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,18 +53,17 @@ namespace verificacion
             {
                 var digit = short.Parse(sscc.Substring(i, 1));
                 var mul = i % 2 == 0 ? 3 : 1; //multiplicador.Pares x1 impares x3
-                suma = suma + digit * mul;            
+                suma = suma + digit * mul;
             }
 
             var dvr = 10 - suma % 10;
             dvr = dvr == 10 ? 0 : dvr;
 
-            if (sscc.Substring(largo - 1) == dvr.ToString())           
+            if (sscc.Substring(largo - 1) == dvr.ToString())
                 isValid = true;
-            
+
             return isValid;
         }
-
 
         public bool ValidaGtin13(string gtin)
         {
@@ -250,192 +250,171 @@ namespace verificacion
             return info;
         }
 
+        public bool ValidaGtin14(string gtin)
+        {
+            var isValid = false;
+            var largo = gtin.Length;
+            if (largo < 14)
+                throw new Exception("Error largo");
 
+            var suma = 0;
+            for (var i = largo - 2; i >= 0; i--)
+            {
+                var digit = short.Parse(gtin.Substring(i, 1));
+                var mul = i % 2 == 0 ? 3 : 1; //multiplicador.Pares x1 impares x3
+                suma = suma + digit * mul;
+            }
 
+            var dvr = 10 - suma % 10;
+            dvr = dvr == 10 ? 0 : dvr;
 
+            if (gtin.Substring(largo - 1) == dvr.ToString())
+                isValid = true;
 
+            return isValid;
+        }
 
+        //La identificación de contenedores se efectúa mediante una combinación alfanumérica de 11 dígitos.4​
+        //Las primeras tres letras identifican al propietario y son asignadas a las compañías por el Bureau International des Containers et du Transport Intermodal(BIC).
+        //La cuarta letra toma los siguientes valores:
+        // U para identificar a los contenedores propiamente dichos.
+        // J para el equipo auxiliar adosable.
+        // Z para chasis o tráilers de transporte vial.
+        // Luego siguen 6 dígitos numéricos y por último un dígito verificador para asegurar la correcta relación con los 10 anteriores.
+        //http://www.shippingline.org/container-numbers/e/
+        public bool ValidaContenedor(string contenedor)
+        {
+            var largo = contenedor.Length;
+            if (largo < 12)
+                throw new Exception("Error largo");
 
+            double suma = 0;
+            int i;
+            var valnum = 0;
 
+            for (i = largo - 3; i >= 0; i--)
+            {
+                switch (contenedor.Substring(i, 1))
+                {
+                    case "0":
+                        valnum = 0;
+                        break;
+                    case "1":
+                        valnum = 1;
+                        break;
+                    case "2":
+                        valnum = 2;
+                        break;
+                    case "3":
+                        valnum = 3;
+                        break;
+                    case "4":
+                        valnum = 4;
+                        break;
+                    case "5":
+                        valnum = 5;
+                        break;
+                    case "6":
+                        valnum = 6;
+                        break;
+                    case "7":
+                        valnum = 7;
+                        break;
+                    case "8":
+                        valnum = 8;
+                        break;
+                    case "9":
+                        valnum = 9;
+                        break;
+                    case "A":
+                        valnum = 10;
+                        break;
+                    case "B":
+                        valnum = 12;
+                        break;
+                    case "C":
+                        valnum = 13;
+                        break;
+                    case "D":
+                        valnum = 14;
+                        break;
+                    case "E":
+                        valnum = 15;
+                        break;
+                    case "F":
+                        valnum = 16;
+                        break;
+                    case "G":
+                        valnum = 17;
+                        break;
+                    case "H":
+                        valnum = 18;
+                        break;
+                    case "I":
+                        valnum = 19;
+                        break;
+                    case "J":
+                        valnum = 20;
+                        break;
+                    case "K":
+                        valnum = 21;
+                        break;
+                    case "L":
+                        valnum = 23;
+                        break;
+                    case "M":
+                        valnum = 24;
+                        break;
+                    case "N":
+                        valnum = 25;
+                        break;
+                    case "O":
+                        valnum = 26;
+                        break;
+                    case "P":
+                        valnum = 27;
+                        break;
+                    case "Q":
+                        valnum = 28;
+                        break;
+                    case "R":
+                        valnum = 29;
+                        break;
+                    case "S":
+                        valnum = 30;
+                        break;
+                    case "T":
+                        valnum = 31;
+                        break;
+                    case "U":
+                        valnum = 32;
+                        break;
+                    case "V":
+                        valnum = 34;
+                        break;
+                    case "W":
+                        valnum = 35;
+                        break;
+                    case "X":
+                        valnum = 36;
+                        break;
+                    case "Y":
+                        valnum = 37;
+                        break;
+                    case "Z":
+                        valnum = 38;
+                        break;
+                }
+                suma = suma + valnum * Math.Pow(2, i);
+            }
+            var dvr = (suma % 11).ToString(CultureInfo.InvariantCulture);
+            if (dvr == "10")
+                dvr = "0";
 
+            var isValid = contenedor.Substring(largo - 2) == "-" && contenedor.Substring(largo - 1).ToUpper() == dvr;
+            return isValid;
 
-
-
-
-
-
-
-
-//        if (strToCheck == "GTIN14")
-//        {
-//            function(s, e)
-//    {
-//        var sscc = s.GetValue(); suma = 0; mul = 3; i = 0;
-//        if (sscc != null)
-//        {
-//            if (sscc && sscc.length == 14)
-//            {
-//                for (i = sscc.length - 2; i >= 0; i--)
-//                {
-//                    mul = i % 2 == 0 ? 3 : 1;
-//                    suma = suma + parseInt(sscc.charAt(i)) * mul;
-//                }
-//                var dvr = 10 - (suma % 10);
-//                dvr = dvr == 10 ? 0 : dvr;
-//                if (sscc.charAt(sscc.length - 1) != dvr)
-//                {
-//                    e.isValid = false;
-//                    e.errorText =\"GTIN14 inválido\"; 
-//                }
-//                else
-//                {
-//                    e.isValid = true;
-//                }
-//            }
-//            else { if (sscc.length > 0) { e.isValid = false; } }
-//        }
-//    }
-//}
-
-
-
-//        if (strToCheck == "Container")
-//        {
-
-//             function validar_container(s, e)
-//{
-//    var contenedor = s.GetValue(); suma = 0; mul = 2; i = 0; valnum = 0;
-//    if (contenedor && contenedor.length > 0)
-//    {
-//        for (i = contenedor.length - 3; i >= 0; i--)
-//        {
-//            switch (contenedor.charAt(i))
-//            {
-//                case '0':
-//                    valnum = 0;
-//                    break;
-//                case '1':
-//                    valnum = 1;
-//                    break;
-//                case '2':
-//                    valnum = 2;
-//                    break;
-//                case '3':
-//                    valnum = 3;
-//                    break;
-//                case '4':
-//                    valnum = 4;
-//                    break;
-//                case '5':
-//                    valnum = 5;
-//                    break;
-//                case '6':
-//                    valnum = 6;
-//                    break;
-//                case '7':
-//                    valnum = 7;
-//                    break;
-//                case '8':
-//                    valnum = 8;
-//                    break;
-//                case '9':
-//                    valnum = 9;
-//                    break;
-//                case 'A':
-//                    valnum = 10;
-//                    break;
-//                case 'B':
-//                    valnum = 12;
-//                    break;
-//                case 'C':
-//                    valnum = 13;
-//                    break;
-//                case 'D':
-//                    valnum = 14;
-//                    break;
-//                case 'E':
-//                    valnum = 15;
-//                    break;
-//                case 'F':
-//                    valnum = 16;
-//                    break;
-//                case 'G':
-//                    valnum = 17;
-//                    break;
-//                case 'H':
-//                    valnum = 18;
-//                    break;
-//                case 'I':
-//                    valnum = 19;
-//                    break;
-//                case 'J':
-//                    valnum = 20;
-//                    break;
-//                case 'K':
-//                    valnum = 21;
-//                    break;
-//                case 'L':
-//                    valnum = 23;
-//                    break;
-//                case 'M':
-//                    valnum = 24;
-//                    break;
-//                case 'N':
-//                    valnum = 25;
-//                    break;
-//                case 'O':
-//                    valnum = 26;
-//                    break;
-//                case 'P':
-//                    valnum = 27;
-//                    break;
-//                case 'Q':
-//                    valnum = 28;
-//                    break;
-//                case 'R':
-//                    valnum = 29;
-//                    break;
-//                case 'S':
-//                    valnum = 30;
-//                    break;
-//                case 'T':
-//                    valnum = 31;
-//                    break;
-//                case 'U':
-//                    valnum = 32;
-//                    break;
-//                case 'V':
-//                    valnum = 34;
-//                    break;
-//                case 'W':
-//                    valnum = 35;
-//                    break;
-//                case 'X':
-//                    valnum = 36;
-//                    break;
-//                case 'Y':
-//                    valnum = 37;
-//                    break;
-//                case 'Z':
-//                    valnum = 38;
-//                    break;
-//            }
-//            suma = suma + valnum * Math.pow(2, i)
-//              }
-//        var dvr = '' + (suma % 11);
-//        if (dvr == '10') dvr = '0';
-//        if (contenedor.charAt(contenedor.length - 2) !=  \"-\" || contenedor.charAt(contenedor.length - 1).toUpperCase() != dvr)
-//              e.isValid = false;
-//              else
-//                  e.isValid = true;
-//    }
-//}
-//        }
-
-
-
-
-
-
+        }
     }
+
 }

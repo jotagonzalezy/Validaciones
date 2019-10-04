@@ -54,6 +54,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtgtin13 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtGtin14 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtContenedor = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtRut
@@ -126,7 +132,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(419, 127);
+            this.label2.Location = new System.Drawing.Point(450, 127);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 14);
             this.label2.TabIndex = 8;
@@ -147,7 +153,7 @@
             // 
             this.lbldv.AutoSize = true;
             this.lbldv.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldv.Location = new System.Drawing.Point(495, 127);
+            this.lbldv.Location = new System.Drawing.Point(526, 127);
             this.lbldv.Name = "lbldv";
             this.lbldv.Size = new System.Drawing.Size(29, 14);
             this.lbldv.TabIndex = 10;
@@ -199,7 +205,7 @@
             // 
             this.lblBanco.AutoSize = true;
             this.lblBanco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBanco.Location = new System.Drawing.Point(495, 141);
+            this.lblBanco.Location = new System.Drawing.Point(526, 141);
             this.lblBanco.Name = "lblBanco";
             this.lblBanco.Size = new System.Drawing.Size(48, 14);
             this.lblBanco.TabIndex = 16;
@@ -209,7 +215,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(441, 141);
+            this.label6.Location = new System.Drawing.Point(472, 141);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 14);
             this.label6.TabIndex = 15;
@@ -274,7 +280,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(57, 240);
+            this.label9.Location = new System.Drawing.Point(57, 193);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 14);
             this.label9.TabIndex = 23;
@@ -284,7 +290,7 @@
             // txtsscc
             // 
             this.txtsscc.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtsscc.Location = new System.Drawing.Point(99, 233);
+            this.txtsscc.Location = new System.Drawing.Point(99, 186);
             this.txtsscc.MaxLength = 18;
             this.txtsscc.Name = "txtsscc";
             this.txtsscc.Size = new System.Drawing.Size(136, 21);
@@ -295,7 +301,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(279, 233);
+            this.button1.Location = new System.Drawing.Point(279, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 21);
             this.button1.TabIndex = 24;
@@ -306,7 +312,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(279, 271);
+            this.button3.Location = new System.Drawing.Point(279, 224);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(107, 21);
             this.button3.TabIndex = 27;
@@ -318,7 +324,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(53, 275);
+            this.label10.Location = new System.Drawing.Point(53, 228);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 14);
             this.label10.TabIndex = 26;
@@ -328,7 +334,7 @@
             // txtgtin13
             // 
             this.txtgtin13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.txtgtin13.Location = new System.Drawing.Point(99, 271);
+            this.txtgtin13.Location = new System.Drawing.Point(99, 224);
             this.txtgtin13.MaxLength = 13;
             this.txtgtin13.Name = "txtgtin13";
             this.txtgtin13.Size = new System.Drawing.Size(136, 21);
@@ -336,11 +342,84 @@
             this.txtgtin13.Text = "7891721028830";
             this.txtgtin13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(279, 263);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(107, 21);
+            this.button4.TabIndex = 30;
+            this.button4.Text = "Validar";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(53, 267);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 14);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Gtin14:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtGtin14
+            // 
+            this.txtGtin14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtGtin14.Location = new System.Drawing.Point(99, 263);
+            this.txtGtin14.MaxLength = 14;
+            this.txtGtin14.Name = "txtGtin14";
+            this.txtGtin14.Size = new System.Drawing.Size(136, 21);
+            this.txtGtin14.TabIndex = 28;
+            this.txtGtin14.Text = "04007630000116";
+            this.txtGtin14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtGtin14.TextChanged += new System.EventHandler(this.txtGtin14_TextChanged);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(279, 305);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 21);
+            this.button5.TabIndex = 33;
+            this.button5.Text = "Validar";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(17, 309);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(76, 14);
+            this.label12.TabIndex = 32;
+            this.label12.Text = "Contenedor:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // txtContenedor
+            // 
+            this.txtContenedor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.txtContenedor.Location = new System.Drawing.Point(99, 305);
+            this.txtContenedor.MaxLength = 14;
+            this.txtContenedor.Name = "txtContenedor";
+            this.txtContenedor.Size = new System.Drawing.Size(136, 21);
+            this.txtContenedor.TabIndex = 31;
+            this.txtContenedor.Text = "HOYU751013-6";
+            this.txtContenedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(890, 638);
+            this.ClientSize = new System.Drawing.Size(890, 530);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.txtContenedor);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtGtin14);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtgtin13);
@@ -403,6 +482,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtgtin13;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtGtin14;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtContenedor;
     }
 }
 
