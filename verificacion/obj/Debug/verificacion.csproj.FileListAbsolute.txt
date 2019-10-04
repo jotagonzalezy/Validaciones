@@ -8,3 +8,12 @@ c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\o
 c:\users\julio\documents\visual studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.pdb
 C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.csprojAssemblyReference.cache
 C:\Users\Julio\Documents\Visual Studio 2015\Projects\verificacion\verificacion\obj\Debug\verificacion.csproj.CoreCompileInputs.cache
+C:\GitHub\Validaciones\verificacion\bin\Debug\verificacion.exe.config
+C:\GitHub\Validaciones\verificacion\bin\Debug\verificacion.exe
+C:\GitHub\Validaciones\verificacion\bin\Debug\verificacion.pdb
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.csprojResolveAssemblyReference.cache
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.Form1.resources
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.Properties.Resources.resources
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.csproj.GenerateResource.Cache
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.exe
+C:\GitHub\Validaciones\verificacion\obj\Debug\verificacion.pdb

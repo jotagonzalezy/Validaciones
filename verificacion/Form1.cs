@@ -115,7 +115,7 @@ namespace verificacion
         private void button5_Click(object sender, EventArgs e)
         {
             var clase = new ValidacionClass();
-            var resp = clase.ValidaContenedor(txtContenedor.Text);
+            var resp = clase.ValidaContenedor2(txtContenedor.Text);
             if (resp)
                 MessageBox.Show(@"Correcto", @"Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else

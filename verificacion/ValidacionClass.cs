@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace verificacion
 {
@@ -17,6 +14,11 @@ namespace verificacion
             public string Tipo { get; set; }
             public string Industria { get; set; }
             public string Banco { get; set; }
+        }
+        public class CodigoCont
+        {
+            public string Letra { get; set; }
+            public int Valor { get; set; }
         }
 
         public bool ValidaRut(string rut, string dv)
@@ -64,7 +66,6 @@ namespace verificacion
 
             return isValid;
         }
-
         public bool ValidaGtin13(string gtin)
         {
             var isValid = false;
@@ -88,6 +89,30 @@ namespace verificacion
 
             return isValid;
         }
+        public bool ValidaGtin14(string gtin)
+        {
+            var isValid = false;
+            var largo = gtin.Length;
+            if (largo < 14)
+                throw new Exception("Error largo");
+
+            var suma = 0;
+            for (var i = largo - 2; i >= 0; i--)
+            {
+                var digit = short.Parse(gtin.Substring(i, 1));
+                var mul = i % 2 == 0 ? 3 : 1; //multiplicador.Pares x1 impares x3
+                suma = suma + digit * mul;
+            }
+
+            var dvr = 10 - suma % 10;
+            dvr = dvr == 10 ? 0 : dvr;
+
+            if (gtin.Substring(largo - 1) == dvr.ToString())
+                isValid = true;
+
+            return isValid;
+        }
+
 
         //El algoritmo de Lenin o fórmula de Luhn, también conocida como "algoritmo de módulo 10",
         //es una fórmula de suma de verificación,
@@ -136,7 +161,6 @@ namespace verificacion
         //Solo: 16, 18 or 19 (United Kingdom Debit Card)
         //JCB: 15 or 16 (Japan Credit Bureau)
         //China UnionPay: 16 (People's Republic of China)
-
         public InfoTarjeta ExtraeData(string creditCardNumber)
         {
             var largo = creditCardNumber.Length;
@@ -249,31 +273,7 @@ namespace verificacion
 
             return info;
         }
-
-        public bool ValidaGtin14(string gtin)
-        {
-            var isValid = false;
-            var largo = gtin.Length;
-            if (largo < 14)
-                throw new Exception("Error largo");
-
-            var suma = 0;
-            for (var i = largo - 2; i >= 0; i--)
-            {
-                var digit = short.Parse(gtin.Substring(i, 1));
-                var mul = i % 2 == 0 ? 3 : 1; //multiplicador.Pares x1 impares x3
-                suma = suma + digit * mul;
-            }
-
-            var dvr = 10 - suma % 10;
-            dvr = dvr == 10 ? 0 : dvr;
-
-            if (gtin.Substring(largo - 1) == dvr.ToString())
-                isValid = true;
-
-            return isValid;
-        }
-
+     
         //La identificación de contenedores se efectúa mediante una combinación alfanumérica de 11 dígitos.4​
         //Las primeras tres letras identifican al propietario y son asignadas a las compañías por el Bureau International des Containers et du Transport Intermodal(BIC).
         //La cuarta letra toma los siguientes valores:
@@ -411,10 +411,83 @@ namespace verificacion
             if (dvr == "10")
                 dvr = "0";
 
-            var isValid = contenedor.Substring(largo - 2) == "-" && contenedor.Substring(largo - 1).ToUpper() == dvr;
+            var isValid = contenedor.Substring(largo - 2, 1) == "-" && contenedor.Substring(largo - 1, 1).ToUpper() == dvr;
             return isValid;
 
         }
-    }
+        public bool ValidaContenedor2(string contenedor)
+        {
+            var codigos = new List<CodigoCont>
+            {
+                new CodigoCont {Letra = "0", Valor = 0},
+                new CodigoCont {Letra = "1", Valor = 1},
+                new CodigoCont {Letra = "2", Valor = 2},
+                new CodigoCont {Letra = "3", Valor = 3},
+                new CodigoCont {Letra = "4", Valor = 4},
+                new CodigoCont {Letra = "5", Valor = 5},
+                new CodigoCont {Letra = "6", Valor = 6},
+                new CodigoCont {Letra = "7", Valor = 7},
+                new CodigoCont {Letra = "8", Valor = 8},
+                new CodigoCont {Letra = "9", Valor = 9},
 
+                new CodigoCont {Letra = "A", Valor = 10},
+                // new CodigoCont { Letra = "*", Valor=11 },
+                new CodigoCont {Letra = "B", Valor = 12},
+                new CodigoCont {Letra = "C", Valor = 13},
+                new CodigoCont {Letra = "D", Valor = 14},
+                new CodigoCont {Letra = "E", Valor = 15},
+                new CodigoCont {Letra = "F", Valor = 16},
+                new CodigoCont {Letra = "G", Valor = 17},
+                new CodigoCont {Letra = "H", Valor = 18},
+                new CodigoCont {Letra = "I", Valor = 19},
+
+                new CodigoCont {Letra = "J", Valor = 20},
+                new CodigoCont {Letra = "K", Valor = 21},
+                // new CodigoCont { Letra = "*", Valor=22 },
+                new CodigoCont {Letra = "L", Valor = 23},
+                new CodigoCont {Letra = "M", Valor = 24},
+                new CodigoCont {Letra = "N", Valor = 25},
+                new CodigoCont {Letra = "O", Valor = 26},
+                new CodigoCont {Letra = "P", Valor = 27},
+                new CodigoCont {Letra = "Q", Valor = 28},
+                new CodigoCont {Letra = "R", Valor = 29},
+
+                new CodigoCont {Letra = "S", Valor = 30},
+                new CodigoCont {Letra = "T", Valor = 31},
+                new CodigoCont {Letra = "U", Valor = 32},
+                //  new CodigoCont { Letra = "C", Valor=33 },
+                new CodigoCont {Letra = "V", Valor = 34},
+                new CodigoCont {Letra = "W", Valor = 35},
+                new CodigoCont {Letra = "X", Valor = 36},
+                new CodigoCont {Letra = "Y", Valor = 37},
+                new CodigoCont {Letra = "Z", Valor = 38},
+            };
+
+
+            var largo = contenedor.Length;
+            if (largo < 12)
+                throw new Exception("Error largo");
+
+            double suma = 0;
+            int i;
+
+
+            for (i = largo - 3; i >= 0; i--)
+            {
+                var caracter = contenedor.Substring(i, 1);
+                var selected = codigos.Where(item => item.Letra.Equals(caracter)).Select(item => new {item.Valor}).FirstOrDefault();
+                if (selected != null)
+                    suma = suma + Convert.ToDouble(selected.Valor) * Math.Pow(2, i);
+            }
+
+            var dvr = (suma % 11).ToString(CultureInfo.InvariantCulture);
+            if (dvr == "10")
+                dvr = "0";
+
+            var isValid = contenedor.Substring(largo - 2, 1) == "-" && contenedor.Substring(largo - 1, 1).ToUpper() == dvr;
+            return isValid;
+
+        }
+
+    }
 }
